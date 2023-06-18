@@ -18,17 +18,13 @@ void main() {
   }
   if (phand == chand) {
     print('draw');
-  } else if (phand == 0 && chand == 1) {
+  } else if (phand == 0 && chand == 1 ||
+      phand == 1 && chand == 2 ||
+      phand == 2 && chand == 0) {
     print('win');
-  } else if (phand == 0 && chand == 2) {
-    print('lose');
-  } else if (phand == 1 && chand == 0) {
-    print('lose');
-  } else if (phand == 1 && chand == 2) {
-    print('win');
-  } else if (phand == 2 && chand == 0) {
-    print('win');
-  } else if (phand == 2 && chand == 1) {
+  } else if (phand == 0 && chand == 2 ||
+      phand == 1 && chand == 0 ||
+      phand == 2 && chand == 1) {
     print('lose');
   }
 }
