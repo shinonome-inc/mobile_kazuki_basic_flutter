@@ -39,13 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(output),
-          Text('西暦を入力してください'),
+          const Text('西暦を入力してください'),
           TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               ),
               onSubmitted: (text) {
-                print('first field :$text');
                 setState(() {
                   double.tryParse(text) != null;
                   if (double.tryParse(text) == null) {
