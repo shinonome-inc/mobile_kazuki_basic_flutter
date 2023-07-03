@@ -3,6 +3,10 @@ import 'dart:math' as math;
 
 void main() {
   print('「グー（＝０）」「チョキ（＝１）」「パー（＝２）」の中から好きな手を選んでください');
+  play();
+}
+
+void play() {
   String input = stdin.readLineSync() ?? '';
   int phand = int.parse(input);
   var random = math.Random();
