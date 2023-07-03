@@ -9,11 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter　Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.yellow,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: '判定所'),
     );
   }
 }
@@ -27,17 +27,53 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String output = "";
+  int year = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: const Center(
-        child: Text(
-          'Basic Flutter 2023',
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(output),
+          Text('西暦を入力してください'),
+          TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+              ),
+              onSubmitted: (text) {
+                print('first field :$text');
+                setState(() {
+                  double.tryParse(text) != null;
+                  if (double.tryParse(text) == null) {
+                    output = 'error';
+                  } else {
+                    year = int.parse(text);
+                    output = kekka(year);
+                  }
+                });
+              }),
+        ],
       ),
     );
+  }
+
+  String kekka(int year) {
+    if (year % 4 == 0) {
+      if (year % 100 == 0) {
+        if (year % 400 == 0) {
+          return ('閏年');
+        } else {
+          return ('平年');
+        }
+      } else {
+        return ('閏年');
+      }
+    } else {
+      return ('平年');
+    }
   }
 }
