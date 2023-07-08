@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter　Demo',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.yellow,
       ),
       home: const MyHomePage(title: '判定所'),
     );
@@ -46,12 +46,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               onSubmitted: (text) {
                 setState(() {
-                  double.tryParse(text) != null;
-                  if (double.tryParse(text) == null) {
-                    output = 'error';
-                  } else {
+                  if (int.tryParse(text) != null) {
                     year = int.parse(text);
-                    output = kekka(year);
+                    output = answer(year);
+                  } else {
+                    output = 'error';
                   }
                 });
               }),
@@ -60,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  String kekka(int year) {
+  String answer(int year) {
     if (year % 4 == 0) {
       if (year % 100 == 0) {
         if (year % 400 == 0) {
