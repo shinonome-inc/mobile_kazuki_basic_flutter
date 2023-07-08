@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 setState(() {
                   if (int.tryParse(text) != null) {
                     year = int.parse(text);
-                    output = answer(year);
+                    output = result(year);
                   } else {
                     output = 'error';
                   }
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  String answer(int year) {
+  String result(int year) {
     if (year % 4 == 0) {
       if (year % 100 == 0) {
         if (year % 400 == 0) {
