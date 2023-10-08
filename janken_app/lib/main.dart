@@ -47,11 +47,13 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (cHand == 2) {
       return "パー";
     }
-    return null;
+    return "";
   }
 
   String? result() {
-    if (p_hand == c_hand) {
+    if (p_hand == 0 && c_hand == 0 ||
+        p_hand == 1 && c_hand == 1 ||
+        p_hand == 2 && c_hand == 2) {
       return "あいこ";
     } else if (p_hand == 0 && c_hand == 1 ||
         p_hand == 1 && c_hand == 2 ||
@@ -62,8 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
         p_hand == 2 && c_hand == 1) {
       return "負け";
     }
-
-    return null;
+    return "";
   }
 
   @override
@@ -101,6 +102,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 if (c_hand == 2) {
                   print('パー');
                 }
+                Future.delayed(Duration(seconds: 3), () {
+                  setState(() {
+                    c_hand = -1;
+                    p_hand = -1;
+                  });
+                });
               },
               child: const Text('グー'),
             ),
@@ -119,6 +126,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 if (c_hand == 2) {
                   print('パー');
                 }
+                Future.delayed(Duration(seconds: 3), () {
+                  setState(() {
+                    c_hand = -1;
+                    p_hand = -1;
+                  });
+                });
               },
               child: const Text('チョキ'),
             ),
@@ -137,6 +150,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 if (c_hand == 2) {
                   print('パー');
                 }
+                Future.delayed(Duration(seconds: 3), () {
+                  setState(() {
+                    c_hand = -1;
+                    p_hand = -1;
+                  });
+                });
               },
               child: const Text('パー'),
             ),
