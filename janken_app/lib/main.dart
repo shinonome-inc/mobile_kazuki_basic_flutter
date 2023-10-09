@@ -30,16 +30,16 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var random = math.Random();
-  int c_hand = -1;
-  int p_hand = -1;
+  int cHand = -1;
+  int pHand = -1;
 
-  void genarateChand() {
+  void generateChand() {
     setState(() {
-      c_hand = random.nextInt(3);
+      cHand = random.nextInt(3);
     });
   }
 
-  String? c_result(int cHand) {
+  String? cResult(int cHand) {
     if (cHand == 0) {
       return "グー";
     } else if (cHand == 1) {
@@ -51,17 +51,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String? result() {
-    if (p_hand == 0 && c_hand == 0 ||
-        p_hand == 1 && c_hand == 1 ||
-        p_hand == 2 && c_hand == 2) {
+    if (pHand == cHand && pHand != -1 && cHand != -1) {
       return "あいこ";
-    } else if (p_hand == 0 && c_hand == 1 ||
-        p_hand == 1 && c_hand == 2 ||
-        p_hand == 2 && c_hand == 0) {
+    } else if (pHand == 0 && cHand == 1 ||
+        pHand == 1 && cHand == 2 ||
+        pHand == 2 && cHand == 0) {
       return "勝ち";
-    } else if (p_hand == 0 && c_hand == 2 ||
-        p_hand == 1 && c_hand == 0 ||
-        p_hand == 2 && c_hand == 1) {
+    } else if (pHand == 0 && cHand == 2 ||
+        pHand == 1 && cHand == 0 ||
+        pHand == 2 && cHand == 1) {
       return "負け";
     }
     return "";
@@ -74,12 +72,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Center(
+        const Center(
           child: Text(
             '好きな手を選択してください',
           ),
         ),
-        Text(c_result(c_hand).toString()),
+        Text(cResult(cHand).toString()),
         Text(result().toString()),
       ]),
       floatingActionButton: Center(
@@ -89,23 +87,23 @@ class _MyHomePageState extends State<MyHomePage> {
             FloatingActionButton(
               backgroundColor: Colors.green,
               onPressed: () {
-                genarateChand();
+                generateChand();
                 result();
-                p_hand = 0;
+                pHand = 0;
 
-                if (c_hand == 0) {
-                  print('グー');
+                if (cHand == 0) {
+                  debugPrint('グー');
                 }
-                if (c_hand == 1) {
-                  print('チョキ');
+                if (cHand == 1) {
+                  debugPrint('チョキ');
                 }
-                if (c_hand == 2) {
-                  print('パー');
+                if (cHand == 2) {
+                  debugPrint('パー');
                 }
-                Future.delayed(Duration(seconds: 3), () {
+                Future.delayed(const Duration(seconds: 3), () {
                   setState(() {
-                    c_hand = -1;
-                    p_hand = -1;
+                    cHand = -1;
+                    pHand = -1;
                   });
                 });
               },
@@ -114,22 +112,22 @@ class _MyHomePageState extends State<MyHomePage> {
             FloatingActionButton(
               backgroundColor: Colors.green,
               onPressed: () {
-                genarateChand();
+                generateChand();
                 result();
-                p_hand = 1;
-                if (c_hand == 0) {
-                  print('グー');
+                pHand = 1;
+                if (cHand == 0) {
+                  debugPrint('グー');
                 }
-                if (c_hand == 1) {
-                  print('チョキ');
+                if (cHand == 1) {
+                  debugPrint('チョキ');
                 }
-                if (c_hand == 2) {
-                  print('パー');
+                if (cHand == 2) {
+                  debugPrint('パー');
                 }
-                Future.delayed(Duration(seconds: 3), () {
+                Future.delayed(const Duration(seconds: 3), () {
                   setState(() {
-                    c_hand = -1;
-                    p_hand = -1;
+                    cHand = -1;
+                    pHand = -1;
                   });
                 });
               },
@@ -138,22 +136,22 @@ class _MyHomePageState extends State<MyHomePage> {
             FloatingActionButton(
               backgroundColor: Colors.green,
               onPressed: () {
-                genarateChand();
+                generateChand();
                 result();
-                p_hand = 2;
-                if (c_hand == 0) {
-                  print('グー');
+                pHand = 2;
+                if (cHand == 0) {
+                  debugPrint('グー');
                 }
-                if (c_hand == 1) {
-                  print('チョキ');
+                if (cHand == 1) {
+                  debugPrint('チョキ');
                 }
-                if (c_hand == 2) {
-                  print('パー');
+                if (cHand == 2) {
+                  debugPrint('パー');
                 }
-                Future.delayed(Duration(seconds: 3), () {
+                Future.delayed(const Duration(seconds: 3), () {
                   setState(() {
-                    c_hand = -1;
-                    p_hand = -1;
+                    cHand = -1;
+                    pHand = -1;
                   });
                 });
               },
