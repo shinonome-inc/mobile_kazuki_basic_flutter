@@ -34,60 +34,85 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
             Container(
-              height: 220,
-            ),
-            Container(
-              height: 63,
-              child: Text('Qiita Feed App',
-                  style: TextStyle(
-                    fontSize: 36,
-                    color: Colors.black,
-                    fontFamily: 'Pacifico',
-                  )),
-            ),
-            Container(
-              height: 8,
-            ),
-            Text(
-              '-PlayGround-',
-              style: TextStyle(fontSize: 14),
-            ),
-            Container(
-              height: 321,
-            ),
-            Container(
-              height: 50,
-              width: 327,
-              child: ElevatedButton(
-                child: const Text('ログイン'),
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    shape: const StadiumBorder(),
-                    backgroundColor: AppColors.primary,
-                    foregroundColor: Colors.white),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/スクリーンショット 2023-12-19 012628.png'),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Container(
-              height: 16,
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.2),
+              ),
             ),
-            Container(
-              height: 50,
-              width: 327,
-              child: (TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.black,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  height: 220,
                 ),
-                child: Text('ログインせずに利用する'),
-              )),
+                Container(
+                  height: 63,
+                  child: const Text('Qiita Feed App',
+                      style: TextStyle(
+                        fontSize: 36,
+                        color: Colors.white,
+                        fontFamily: 'Pacifico',
+                      )),
+                ),
+                Container(
+                  height: 8,
+                ),
+                const SizedBox(
+                  width: 95,
+                  height: 20,
+                  child: Text(
+                    '-PlayGround-',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 321,
+                ),
+                Container(
+                  height: 50,
+                  width: 327,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        shape: const StadiumBorder(),
+                        backgroundColor: AppColors.primary,
+                        foregroundColor: const Color(0xFFF9FCFF)),
+                    child: const Text('ログイン'),
+                  ),
+                ),
+                Container(
+                  height: 16,
+                ),
+                Container(
+                  height: 50,
+                  width: 327,
+                  child: (TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.white,
+                    ),
+                    child: const Text('ログインせずに利用する'),
+                  )),
+                ),
+                Container(
+                  height: 64,
+                ),
+              ],
             ),
-            Container(
-              height: 64,
-            )
           ],
         ),
       ),
