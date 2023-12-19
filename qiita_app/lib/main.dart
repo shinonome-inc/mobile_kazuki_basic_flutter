@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('images/スクリーンショット 2023-12-19 012628.png'),
+                  image: AssetImage('images/background (1).png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -56,9 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   height: 220,
                 ),
-                Container(
+                const SizedBox(
                   height: 63,
-                  child: const Text('Qiita Feed App',
+                  child: Text('Qiita Feed App',
                       style: TextStyle(
                         fontSize: 36,
                         color: Colors.white,
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   height: 321,
                 ),
-                Container(
+                SizedBox(
                   height: 50,
                   width: 327,
                   child: ElevatedButton(
@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   height: 16,
                 ),
-                Container(
+                SizedBox(
                   height: 50,
                   width: 327,
                   child: (TextButton(
