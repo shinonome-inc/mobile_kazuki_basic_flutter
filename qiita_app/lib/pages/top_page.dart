@@ -36,9 +36,9 @@ class _TopPageState extends State<TopPage> {
                 Container(
                   height: 220,
                 ),
-                Container(
+                const SizedBox(
                   height: 63,
-                  child: const Text('Qiita Feed App',
+                  child: Text('Qiita Feed App',
                       style: TextStyle(
                         fontSize: 36,
                         color: Colors.white,
@@ -62,7 +62,7 @@ class _TopPageState extends State<TopPage> {
                 Container(
                   height: 321,
                 ),
-                Container(
+                SizedBox(
                   height: 50,
                   width: 327,
                   child: ElevatedButton(
@@ -77,7 +77,7 @@ class _TopPageState extends State<TopPage> {
                 Container(
                   height: 16,
                 ),
-                Container(
+                SizedBox(
                   height: 50,
                   width: 327,
                   child: (TextButton(
